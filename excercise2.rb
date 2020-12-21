@@ -4,7 +4,11 @@ end
 
 grocery_list = ["*carrots", "*toilet paper", "*apples", "*salmon"]
 
-# what does the asterik mean? 
+grocery_list = grocery_list.map do 
+    puts "#{*(grocery_list)}"
+end
+
+
 
 puts output(grocery_list)
 
