@@ -1,5 +1,3 @@
-# Don't forget to try running your code after each step, and to commit frequently as you work!
-
 # Start out by creating the following hash representing the number of students in a cohorts:
 
 # students = {
@@ -8,6 +6,8 @@
 #   :cohort3 => 22
 # }
 # Create a method that displays the name and number of students for each cohort, like so:
+
+
 
 # Add cohort 4, which had 43 students, to the hash.
 
@@ -23,40 +23,36 @@
 
 # After you're done, be sure you have committed and pushed everything to your Github repo.
 
-
+#pseudo code
+#create the hash for students and the amount of student in the hash
 students = {:cohort1 => 34, :cohort2 => 42, :cohort3 => 22}
-
-def display(argument)
-    (argument).each do |key, value|
-    puts "This is #{key} with #{value} students in it"
-    end 
+#create method to read the hash and display the key and value elements
+students.each do |cohort_number, number_of_students|
+    puts "This is #{cohort_number} and it has #{number_of_students} students"
 end 
-
-# students[:cohort4] = 43
-
-# puts students
-
-# students = students.map do |first, second|
-#     puts "your #{first} has #{second*1.05} people in it "
-# end 
-
-# students.delete(:cohort2)
-
-# puts students
-
-# counter = 0
-
-# students.each do |first, second|
-#     counter = counter + second
-#     puts counter
-# end 
-
-
-staff = {:staff1 => "adriana", :staff2 => "victoria", :staff3 => "bill"}
-
-puts display(staff)
-# puts staff
-
-
-
-#questions. line29-33 49-52(problem is that they are giving me all the numbers as results and not just the final sum) arent working for some reason
+#add cohort 4 (43 students)
+students[:cohort4] = 43
+#increase each cohort by 5 percent
+#round the number to a whole number: not a float
+students.each do |cohort_number, number_of_students|
+    new_number_of_students = (number_of_students*1.05).to_i  
+    puts "#{cohort_number} now has #{new_number_of_students} which is an additional %5 of people"
+end 
+# I need an explanation between the command return and puts
+#Delete cohort2 with its value
+students.delete(:cohort2)
+#display hash
+puts students
+#calcualte the total number of students
+#display the result
+students = {:cohort1 => 34, :cohort2 => 42, :cohort3 => 22}
+def calculate_total_people(hash)
+    hash.each do |key, value|
+        total_students = 0
+        total_students = total_students + value
+    end 
+    return total_students
+end 
+puts calculate_total_people(students)
+#I dont know why this is not working
+#create the staff hash and display using the same method
