@@ -17,19 +17,24 @@
 
 # How will this method know which dogs are absent?
 # Your neighbour has also asked you to watch over her dogs. Make another array of dogs. Add another array of dogs similar to the previous one. Call the method call_absent_dogs with each set of dogs.
+# This problem emphasises the need to break down problems into smaller parts. Always try to solve one problem at a time.
 
-
-my_dogs = [{ :name => 'Ralph', :position => 5 }, { :name => 'Cindy', :position => 8 }, { :name => 'Jade', :position => 11 },]
-
-def get_absent_dogs(argument)
-    argument.each do |dog|
-        puts "You have 3 dogs. their names are #{dog}"
-    end 
-        dog.select do |name, position|
-           position(:position) > 10
-           end
+#create the hash with the dogs
+ my_dogs = [{ :name => 'Ralph', :position => 5 },{ :name => 'Cindy', :position => 8 },{ :name => 'Jade', :position => 11 },]
+#write a method to figure out which dogs are missing(the dogs whose postiion is greatesr than 10)
+def find_missing_dogs(argument)
+    argument.each do |list|
+    if   list[:position] > 10
+        puts "#{list[:name]} is missing"
+        # list.each do |key, value|
+        # list.values_at(key) = position_of_dog
+        # end
+    end
+    return position_of_dog
 end 
-    
-
-
-puts get_absent_dogs(my_dogs)
+puts find_missing_dogs(my_dogs)
+#what am I doing wrong?
+#the method should return an array of dogs to you (only the dogs that are missing)
+#Call the dogs that are absent with a method called call_absent_dogs(take the array of dogs as an argument) and outputs "come back, izzy"
+#create another array of dogs. 
+#call them with the method call_absent_dogs
