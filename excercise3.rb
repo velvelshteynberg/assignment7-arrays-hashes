@@ -51,8 +51,8 @@ def calculate_total_people(hash)
         total_students = 0
         total_students = total_students + value
     end 
-    return total_students
+        return total_students
 end 
-puts calculate_total_people(students)
+calculate_total_people(students)
 #I dont know why this is not working
 #create the staff hash and display using the same method
