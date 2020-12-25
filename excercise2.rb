@@ -17,22 +17,24 @@
 #create a list of grocery items
 grocery_item_list = ["crackers", "coke", "popcorn", "apples", "salmon"]
 #present each item of the grocery list on a seperate line
-grocery_item_list.each do |individual_grocery_items|
-    puts individual_grocery_items
-end
+# grocery_item_list.each do |individual_grocery_items|
+#     puts individual_grocery_items
+# end
 #add an asterik(*) in front of each item in your grocery list
+#method 1
 def add_asterik(argument)
     argument.each do |individual_grocery_items|
     asterik_individual_grocery_items = "*#{individual_grocery_items}"
-    return asterik_individual_grocery_items
+    puts asterik_individual_grocery_items
     end
 end 
+add_asterik(grocery_item_list)
+#method 2
 new_list = grocery_item_list.map do |item|
-    item = "*"+item
+    item = "*"+ item
 end
 puts new_list
-puts add_asterik(grocery_item_list)
-# add_asterik(grocery_item_list)- Not sure why its not working
+
 #add a bag of rice to your grocery list
 grocery_item_list.push ("rice")
 #print your new grocery list
@@ -40,15 +42,13 @@ puts grocery_item_list
 #check out how many grocery items you have on your list
 puts grocery_item_list.length
 #check if you list has bananas. 
-grocery_item_list.include?("banana")
-#not working. I dont know why. I am copying this syntax from the ruby doc. The syntax of .include
+puts grocery_item_list.include?("banana")
 #if it does output "You need to pick up banaas", otherwise output "you don't need to pick up bananas"
-if grocery_item_list.include?("banana") == true
+if grocery_item_list.include?("banana") 
     puts "You need to pick up bananas"
-elseif grocery_item_list.include?("banana") ==  false
+else 
     puts "You don't need to pick up bananas"
 end 
-#this isnt either working cause the .include? isn't working. Im not sure why thats not working
 #display the second item on the list
 puts grocery_item_list[1]
 #sort your list alphabetically
