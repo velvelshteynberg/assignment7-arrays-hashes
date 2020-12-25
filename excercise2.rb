@@ -25,7 +25,12 @@ def add_asterik(argument)
     argument.each do |individual_grocery_items|
     asterik_individual_grocery_items = "*#{individual_grocery_items}"
     return asterik_individual_grocery_items
+    end
 end 
+new_list = grocery_item_list.map do |item|
+    item = "*"+item
+end
+puts new_list
 puts add_asterik(grocery_item_list)
 # add_asterik(grocery_item_list)- Not sure why its not working
 #add a bag of rice to your grocery list
