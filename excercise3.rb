@@ -46,13 +46,17 @@ puts students
 #calcualte the total number of students
 #display the result
 students = {:cohort1 => 34, :cohort2 => 42, :cohort3 => 22}
+
+total_students = 0
+
 def calculate_total_people(hash)
     hash.each do |key, value|
-        total_students = 0
-        total_students = total_students + value
+        
+        total_students += hash[:value]
     end 
         return total_students
 end 
+
 calculate_total_people(students)
 #I dont know why this is not working
 #create the staff hash and display using the same method
