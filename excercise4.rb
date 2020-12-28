@@ -20,21 +20,28 @@
 # This problem emphasises the need to break down problems into smaller parts. Always try to solve one problem at a time.
 
 #create the hash with the dogs
- my_dogs = [{ :name => 'Ralph', :position => 5 },{ :name => 'Cindy', :position => 8 },{ :name => 'Jade', :position => 11 },]
+my_dogs = [{ :name => 'Ralph', :position => 5 },{ :name => 'Cindy', :position => 8 },{ :name => 'Jade', :position => 11 }]
 #write a method to figure out which dogs are missing(the dogs whose postiion is greatesr than 10)
-def find_missing_dogs(argument)
-    argument.each do |list|
-    if   list[:position] > 10
-        puts "#{list[:name]} is missing"
-        # list.each do |key, value|
-        # list.values_at(key) = position_of_dog
-        # end
-    end
-    return position_of_dog
-end 
-puts find_missing_dogs(my_dogs)
-#what am I doing wrong?
 #the method should return an array of dogs to you (only the dogs that are missing)
-#Call the dogs that are absent with a method called call_absent_dogs(take the array of dogs as an argument) and outputs "come back, izzy"
+def get_absent_dogs(argument)
+    missing_dogs = []
+    argument.each do |list|
+    if list[:position] > 10
+        missing_dogs.push(list)
+    end      
+    end 
+    return missing_dogs
+end 
+
+missing_dogs = get_absent_dogs(my_dogs)
+#Call the dogs that are absent with a method called call_absent_dogs(take the array of dogs as an argument) and outputs "calcome back, izzy"
+def call_absent_dogs(array_of_dogs)
+    array_of_dogs.each do |dog|
+        puts "#{dog[:name]}, come back"
+    end
+end 
+puts call_absent_dogs(get_absent_dogs(my_dogs))
 #create another array of dogs. 
+my_new_dogs_list = [{ :name => 'Jake', :position => 50 },{ :name => 'Jacky', :position => 15 },{ :name => 'Joey', :position => 11 }]
 #call them with the method call_absent_dogs
+puts call_absent_dogs(get_absent_dogs(my_new_dogs_list))
