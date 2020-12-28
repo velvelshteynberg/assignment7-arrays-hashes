@@ -47,9 +47,8 @@ puts students
 #display the result
 students = {:cohort1 => 34, :cohort2 => 42, :cohort3 => 22}
 
-total_students = 0
-
 def calculate_total_people(hash)
+    total_students = 0
     hash.each do |key, value|
         
         total_students += hash[:value]
